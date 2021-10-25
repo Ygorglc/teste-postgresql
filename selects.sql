@@ -1,5 +1,5 @@
-CREATE TABLE aluno2 (
-	id serial,
+CREATE TABLE aluno (
+	id serial primary key,
 	nome VARCHAR(255),
 	cpf CHAR(11),
 	observacao text,
@@ -43,10 +43,12 @@ values (
 
 );
 
+insert into aluno (nome) values ('Costa');
+
 select* from aluno where id = 1;
 
 update aluno 
-	set nome = 'Arlindo' ,
+	set nome = 'Leandro' ,
 	cpf = '01987654321',
 	observacao = 'Recomendo',
 	idade = 34,
@@ -56,6 +58,7 @@ update aluno
 	data_nascimento = '1984-08-27',
 	hora_aula = '17:30:00',
 	matriculado_em = '2021-02-08 16:00:00'
+where id = 2;
 
 select * from aluno where nome = 'Diogo';
 
@@ -90,3 +93,5 @@ select nome as "Nome do aluno", idade as "Idade do documento" from aluno;
 
 
 
+
+#Fim
