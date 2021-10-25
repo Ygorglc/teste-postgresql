@@ -9,4 +9,4 @@ update aluno
 	data_nascimento = '1984-08-27',
 	hora_aula = '17:30:00',
 	matriculado_em = '2021-02-08 16:00:00'
-where id = 2;
+where id = 1;

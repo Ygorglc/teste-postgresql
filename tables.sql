@@ -27,6 +27,17 @@ create table aluno_curso (
 	curso_id INTEGER,
 	primary key (aluno_id, curso_id),
 	
-	foreign key (aluno_id) references  aluno (id)
-
+	foreign key (aluno_id) 
+	references  aluno (id)
+	on delete cascade
+	on update cascade,
+	
+	foreign key (curso_id) 
+	references  curso (id)
+	on delete cascade
+	on update cascade
+	/*o ON DELETE CASCADE funciona para deletar da tabela caso sua chave estrangeira seja excluida.*/ 
+	/*o ON DELETE RESTRICT funciona para não permitir que delete da tabela caso sua chave estrangeira seja excluida.*/ 
+	/*o ON UPDATE CASCADE funciona para atualizar da tabela caso sua chave estrangeira seja atualizada.*/ 
+	/*o ON UPDATE RESTRICT funciona para não permitir que atualize da tabela caso sua chave estrangeira seja atualizada.*/ 	
 )
